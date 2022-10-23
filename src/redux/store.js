@@ -16,7 +16,10 @@ const configureStore = preloadedState => createStore(
   composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
 
-const store = configureStore({});
+// TO-DO: get info from local storage
+const store = configureStore({
+  authentication: { isLoggedIn: false }
+});
 
 sagaMiddleware.run(rootSaga);
 
